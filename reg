@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration form</title>
+
+<script type="text/javascript">
+function validation(){	
+var name=/^[A-Za-z]{3,15}$/;
+var mobile=/^[6-9][0-9]{9}$/;
+var email=/^[a-z0-9]{5,}[@][a-z]{1,6}[.][a-z]{2,6}$/;
+if(document.form.name.value==""){alert("please enter your name");}
+else if(name.test(document.form.name.value)==false){alert("please enter your name correctly");}
+else if(document.form.mobilenumber.value==""){alert("please enter your mobile number");}
+else if(mobile.test(document.form.mobilenumber.value)==false){alert("please enter your mobile number correctly");}
+else if(document.form.email.value==""){alert("please enter your email");}
+else if(email.test(document.form.email.value)==false){alert("please enter your email correctly");}
+else if(document.form.gender.value==""){alert("please enter your gender");}
+else if(document.form.address.value==""){alert("please enter your address");}
+else 
+	window.location="success.html";
+}
+</script>
+
+</head>
+<body>
+	<h1 align="center">Registration form</h1>
+	<form name="form">
+		<table border="1" align="center">
+
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+
+			<tr>
+				<td>Mobile Number</td>
+				<td><input type="text" name="mobilenumber"
+					pattern="[6-9][0-9]{10}"></td>
+
+			</tr>
+
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+
+			<tr>
+				<td>Gender</td>
+				<td><input type="radio" name="gender" value="male">Male
+					<input type="radio" name="gender" value="female">Female</td>
+			</tr>
+
+			<tr>
+				<td>Address</td>
+				<td><textarea rows="5" cols="15" name="address"></textarea></td>
+			</tr>
+			<tr>
+				<td>course</td>
+				<td><input type="checkbox"  name="course" value="java">java
+					<input type="checkbox"  name="course" value="hibernate">hibernate
+					<input type="checkbox"  name="course" value="c">c
+					<input type="checkbox"  name="course" value="spring">spring
+				</td>
+			</tr>
+			<tr>
+			<td>
+			<select name="city">
+				<option value="hyd">hyd
+				<option value="rjpt">rjpt
+				<option value="vja">vja
+				<option value="eluru">eluru
+						
+			</td>
+			</tr>
+			
+			<tr>
+				<td align="center" colspan="2"><input type="button" value="submit"
+					name="submit" onclick="validation()"></td>
+			</tr>
+		</table>
+
+	</form>
+
+</body>
+</html>
